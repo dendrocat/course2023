@@ -37,7 +37,7 @@ function setCharact(charact) {
 
 
 function getData() {
-    fetch(`../database/products/${path}/data.json`).then(
+    fetch(`./database/products/${path}/data.json`).then(
         response => response.json()
     ).then(function(json) {
         document.querySelector(`#name`).textContent = json["name"];
