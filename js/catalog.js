@@ -316,6 +316,8 @@ function doFilter() {
         let age = getAge(product["age"]) >= min_age;
         if (brand && type && price && sex && age) addCard(product);
     }
+    
+    document.querySelector("#button-close").checked = false;
 }
 
 
