@@ -157,7 +157,7 @@ async function createCards() {
     if (sessionStorage.bin) bin = JSON.parse(sessionStorage.bin);
     if (bin && bin.length > 0) {
         for (let el of bin) {
-            let response = await fetch(`../database/products/${el["path"]}/data.json`);
+            let response = await fetch(`./database/products/${el["path"]}/data.json`);
             let json = await response.json();
             
             addCard(json, el["count"]);
