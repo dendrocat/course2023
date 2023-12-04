@@ -1,0 +1,131 @@
+#products {
+    --gaps: 10px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: var(--gaps);
+    column-gap: var(--gaps);
+
+    margin: 10px 20px;
+}
+
+.card {
+    align-self: flex-start;
+    justify-self: flex-start;
+
+    --color: #000;
+    --decor: none;
+    --img-height: clamp(150px, 25vw, 170px);
+    --img-width: calc(var(--img-height) + 30px);
+
+    font-family: sans-serif;
+    word-spacing: 2px;
+    font-weight: 700;
+    color: var(--color);
+    text-decoration: var(--color);
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: var(--img-height) auto auto auto;
+    justify-items: center;
+    align-items: center;
+    
+    width: var(--img-width);
+    height: 315px;
+    border-color: #3e3e3e; 
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 15px;
+
+    padding: 15px 20px;
+
+    transition: border-color .5s ease,
+                box-shadow .5s ease;
+}
+
+.card:hover {
+    --color-box: rgb(120, 240, 0);
+    border-color: var(--color-box);
+    box-shadow: 0 0 4px 1px var(--color-box);
+}
+
+.img {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    grid-row: 1/2;
+    grid-column: 1/3;
+}
+.img > img {
+    margin: auto 0;
+    max-width: var(--img-width);
+    max-height: var(--img-height);
+}
+
+.mark {
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.mark > p {
+    margin-top: 7px;
+    margin-left: 5px;
+    width: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.mark > img {
+    width: 30px;
+}
+
+.name {
+    color: var(--color);
+    text-decoration: var(--decor);
+    font-size: 16px;
+    grid-row: 3/4;
+    grid-column: 1/3;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: bold;
+    grid-row: 4/5;
+    grid-column: 1/2;
+    align-self: center;
+}
+
+
+.add {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    grid-row: 4/5;
+    grid-column: 2/3;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(140deg, 
+    rgb(70, 104, 182) 0%, 
+    rgb(128, 94, 152) 40%, 
+    rgb(160, 95, 162) 65%, 
+    rgb(255, 42, 98) 100%);
+
+    cursor: pointer;
+}
+.add > img {
+    width: 85%;
+
+}
+
+.add:hover {
+    box-shadow: 0px 0px 100px 100px rgba(34, 60, 80, 0.2) inset;
+}

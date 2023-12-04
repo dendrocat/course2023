@@ -1,0 +1,262 @@
+main {
+    --filters-background-color: #e3fdfd;
+ 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+main > h1 {
+    z-index: 3;
+    display: inline;
+    margin: 15px auto 5px;
+}
+
+
+
+
+#button-close {
+    display: none;
+}
+#podpis, #polos {
+    cursor: pointer;
+}
+
+#polos {
+    display: block;
+    z-index: 10;
+    left: 10px;
+    --line-height: 4px;
+    --line-margin: 16px;
+    --line-radius: 4px;
+    --rotate-deg: 45deg;
+
+    --polos-height: calc(var(--line-height) * 2 + var(--line-margin) * 1);
+    --polos-width: 28px;
+    
+    width: var(--polos-width);
+    height: var(--polos-height);
+
+    transition: width .5s ease;
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: var(--line-height);
+    background-color: #ff0000;
+    border-radius: var(--line-radius);
+    
+    transition: width .5s ease, 
+                transform .5s ease;
+}
+.line1 {
+    margin-bottom: var(--line-margin);
+    transform-origin: 0 50%;
+    transform: rotate(var(--rotate-deg));
+}
+.line2 {
+    transform-origin: 0 50%;
+    transform: rotate(calc(0deg - var(--rotate-deg)));
+}
+
+
+
+#filters, #podpis {
+    font-family: "Arial", Gadget, sans-serif;
+    font-size: 16px;
+    letter-spacing: -0px;
+    word-spacing: 2px;
+    color: #808080;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+#podpis {
+    display: inline;
+    width: 80px;
+    margin-left: 20px;
+}
+
+
+#drop-list {
+    display: none;
+}
+
+#checked-input-sorts {
+    padding: 5px;
+    width: 190px;
+    border: #000 solid;
+}
+#list {
+    display: none;
+}
+
+
+
+#filters {
+    --padding-top: 60px;
+    --padding-left: 40px;
+    z-index: 2;
+    position: absolute;
+    padding-top: var(--padding-top);
+    padding-left: var(--padding-left);
+    right: 100%;
+
+
+    width: calc(100% - var(--padding-left));
+    height: calc(100% - var(--padding-top));
+    background-color: var(--filters-background-color);
+    transition: right .5s ease;
+}
+#filters > div {
+    margin-bottom: 10px;
+}
+#filters > span {
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    margin-bottom: 10px;
+    color: rgb(126 179 0);
+}
+#filters > span:hover{
+    cursor: pointer;
+    text-decoration: underline solid;
+}
+
+#filters > div > p {
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    margin: 10px 0 5px;
+}
+#price {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    justify-content: space-evenly;
+}
+#price > p {
+    width: 80px;
+    grid-row: 1/2;
+    grid-column: 1/3;
+}
+.mins {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.maxs {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#button-close:checked ~ #filters {
+    right: 0;
+}
+
+#button-close:checked + #podpis {
+    visibility: hidden;
+}
+
+.checks {
+    margin: 10px auto;
+}
+.cheks {
+    transform: scale(1.5);
+}
+.cheks:hover, .cheks:hover + label {
+    cursor: pointer;
+}
+.cheks + label {
+    margin-left: 20px;
+}
+
+
+.price-input {
+    font-size: 18px;
+    width: 70px;
+    height: 30px;
+    padding: 0 0px 0 15px;
+    border-radius: 10px;
+    border: rgb(170, 170, 170) solid .5px;
+}
+
+.price-input::-webkit-outer-spin-button,
+.price-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.price-input:focus {
+    outline: 1px rgb(41, 41, 41) solid
+}
+
+
+#confirm_filt {
+    color: #fff;
+    background-color: rgb(162 231 0);
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+    font-family: "Arial", Gadget, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+
+    border: none;
+    border-radius: 10px;
+}
+
+#confirm_filt:hover {
+    box-shadow: 0px 0px 100px 100px rgba(34, 60, 80, 0.1) inset;
+}
+
+
+@media screen and (min-width: 1001px) {
+    main {
+        display: grid;
+        grid-template-columns: 250px auto;
+        grid-template-rows: 70px auto;
+
+        margin: 10px;
+    }
+
+    h1 {
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+    #podpis, #button-close, #polos {
+        display: none;
+    }
+    #filters {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        padding: 10px 20px;
+        left: 0;
+        background: transparent;
+        height: auto;
+
+        border: rgb(120, 240, 0) 1px solid;
+        border-radius: 10px;
+    }
+    #price {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, auto);
+        gap: 10px
+    }
+    .min {
+        margin-top: -10px;
+    }
+    .maxs {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .maxs > label {
+        margin-left: -3px;
+    }
+
+    #products {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+}

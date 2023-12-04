@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"
+        http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="./styles/style-header.css">
+        <link rel="stylesheet" href="./styles/style-home.css">
+        <link rel="stylesheet" href="./styles/catalog/cards.css">
+        <link rel="stylesheet" href="./styles/style-footer.css">
+    </head>
+    <body>
+        <header>
+            <a id="location" href="./error.html">
+                <img src="./database/img/loc.png" class="img-header">
+                <span>Подольск</span>
+            </a>
+            <input type="checkbox" id="navi">
+            <label for="navi" id="lines">
+                <span class="lines lines1"></span>
+                <span class="lines lines2"></span>
+                <span class="lines lines3"></span>
+            </label>
+            <div id="container-navi">
+                <nav class="nav header-nav">
+                    <a href="./index.html">Главная</a>
+                    <a href="./catalog.html">Каталог</a>
+                    <a href="./bin.html">Корзина</a>
+                    <a href="./profile.html">Профиль</a>
+                </nav>
+            </div>
+            <a href="./error.html" id="container-tel">
+                <img src="./database/img/tel.png" class="img-header">
+            </a>
+        </header>
+        <main>
+            <div id="popular-brands">
+                <p class="tittle">Популярные бренды</p>
+                <div id="brands">
+                    <a class="cards brand-card" href="./catalog.html?brand=Disney">
+                        <img src="./database/popular_brands/Disney.png" alt="">
+                        <p>Disney</p>
+                    </a>
+                    <a class="cards brand-card" href="./catalog.html?brand=Lego">
+                        <img src="./database/popular_brands/Lego.png" alt="">
+                        <p>Lego</p>
+                    </a>
+                    <a class="cards brand-card" href="./catalog.html?brand=HotWheels">
+                        <img src="./database/popular_brands/HotWheels.png" alt="">
+                        <p>Hot Wheels</p>
+                    </a>
+                    <a class="cards brand-card" href="./catalog.html?brand=Barbie">
+                        <img src="./database/popular_brands/Barbie.png" alt="">
+                        <p>Barbie</p>
+                    </a>
+                    <a class="cards brand-card" href="./catalog.html?brand=RainbowHigh">
+                        <img src="./database/popular_brands/Rainbow_high.png" alt="">
+                        <p>Rainbow High</p>
+                    </a>
+                </div>
+            </div>
+            <div id="popular-types">
+                <p class="tittle">Популярные категории</p>
+                <div id="types">
+                    <button id="left">
+                        <img src="./database/img/arrow.png">
+                    </button>
+                    <div id="type-cards">
+                        <a class="cards type-card" href="./catalog.html?type=Конструкторы">
+                            <img src="./database/popular_types/konstructor.png">
+                            <p>Конструкторы</p>
+                        </a>
+                        <a class="cards type-card" href="./catalog.html?type=Куклы">
+                            <img src="./database/popular_types/doll.png">
+                            <p>Куклы</p>
+                        </a>
+                        <a class="cards type-card" href="./catalog.html?type=Настольныеигры">
+                            <img src="./database/popular_types/boards.png">
+                            <p>Настольные игры</p>
+                        </a>
+                        <a class="cards type-card" href="./catalog.html?type=Транспорт">
+                            <img src="./database/popular_types/transport.png">
+                            <p>Транспорт</p>
+                        </a>
+                        <a class="cards type-card" href="./catalog.html?type=Оружие">
+                            <img src="./database/popular_types/weapon.png">
+                            <p>Оружие</p>
+                        </a>
+                        <a class="cards type-card" href="./catalog.html?type=Детскиекухни">
+                            <img src="./database/popular_types/kitchen.png">
+                            <p>Детские кухни</p>
+                        </a>
+                    </div>
+                    <button id="right">
+                        <img src="./database/img/arrow.png">
+                    </button>
+                </div>
+            </div>
+            <div id="popular-products">
+                <p class="tittle">Популярные товары</p>
+                <div id="products">
+                    <div class="card">
+                        <a href="product.html?path=CR/CR0001" class="img">
+                            <img class="image" src="./database/products/CR/CR0001/img0.png">
+                        </a>
+                        <div class="mark">
+                            <img src="database/img/star.png">
+                            <p>5</p></div>
+                            <a href="product.html?path=CR/CR0001" class="name">
+                                LEGO Technic 42151LS конструктор Bugatti Bolide
+                            </a>
+                            <p class="price">10 149 ₽</p>
+                            <button class="add">
+                                <img src="database/img/backet.png">
+                            </button>
+                    </div>
+                    <div class="card">
+                        <a href="./product.html?path=DL/DL0001" class="img">
+                            <img class="image" src="./database/products/DL/DL0001/img0.png">
+                        </a>
+                        <div class="mark">
+                            <img src="./database/img/star.png">
+                            <p>5</p>
+                        </div>
+                        <a href="./product.html?path=DL/DL0001" class="name">
+                            Кукла Скайлер Брэдшоу Rainbow High Fantastic Fashi
+                        </a>
+                        <p class="price">14 149 ₽</p>
+                        <button class="add">
+                            <img src="./database/img/backet.png">
+                        </button>
+                    </div>
+                    <div class="card">
+                        <a href="./product.html?path=TG/TG0001" class="img">
+                            <img class="image" src="./database/products/TG/TG0001/img0.png">
+                        </a>
+                        <div class="mark">
+                            <img src="./database/img/star.png">
+                            <p>5</p>
+                        </div>
+                        <a href="./product.html?path=TG/TG0001" class="name">
+                            Игра настольная Звезда Exit Гробница фараона 8971
+                        </a>
+                        <p class="price">989 ₽</p>
+                        <button class="add">
+                            <img src="./database/img/backet.png">
+                        </button>
+                    </div>
+                    <div class="card">
+                        <a href="./product.html?path=WE/WE0002" class="img">
+                            <img class="image" src="./database/products/WE/WE0002/img0.png">
+                        </a>
+                        <div class="mark">
+                            <img src="./database/img/star.png">
+                            <p>4.5</p>
+                        </div>
+                        <a href="./product.html?path=WE/WE0002" class="name">
+                            Игрушечный бластер Нёрф Зомби Цепевик
+                        </a>
+                        <p class="price">1 999 ₽</p>
+                        <button class="add">
+                            <img src="./database/img/backet.png">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="abouts">
+                <div class="abouts-row row1">
+                    <input type="checkbox" class="footer-check" id="r1">
+                    <label for="r1" class="label-footer"> 
+                        <p>КАТАЛОГ ТОВАРОВ</p> 
+                        <img src="./database/img/cur.png" class="img-footer">
+                    </label> 
+                    <div class="footer-inform inform1">
+                        <nav class="nav footer-nav">
+                            <a href="./catalog.html?type=Конструкторы"> Конструкторы </a>
+                            <a href="./catalog.html?sex=для мальчиков"> Игрушки для мальчиков </a>
+                            <a href="./catalog.html?sex=для девочек"> Игрушки для девочек </a>
+                            <a href="./catalog.html?sex=для малышей"> Игрушки для малышей </a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="abouts-row row2">
+                    <input type="checkbox" class="footer-check" id="r2">
+                    <label for="r2" class="label-footer"> 
+                        <p>СЕРВИСЫ</p> 
+                        <img src="./database/img/cur.png" class="img-footer">
+                    </label> 
+                    <div class="footer-inform inform2">
+                        <nav class="nav footer-nav">
+                            <a href="./error.html"> Помощь </a>
+                            <a href="./bin.html"> Корзина </a>
+                            <a href="./error.html"> Доставка и оплата </a>
+                            <a href="./error.html"> Возврат </a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="abouts-row row3">
+                    <input type="checkbox" class="footer-check" id="r3">
+                    <label for="r3" class="label-footer"> 
+                        <p>ИНФОРМАЦИЯ</p> 
+                        <img src="./database/img/cur.png" class="img-footer">
+                    </label> 
+                    <div class="footer-inform inform3">
+                        <nav class="nav footer-nav">
+                            <a href="./error.html"> Новости </a>
+                            <a href="./error.html"> Обзоры </a>
+                            <a href="./error.html"> FAQ </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <p id="copyright">© Даниил Смирнов ИКБО-03-22</p>
+        </footer>
+
+        <script type="module" src="./js/home.js"></script>
+    </body>
+</html>
