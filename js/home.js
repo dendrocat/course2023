@@ -4,9 +4,6 @@ setMainSize();
 
 
 let types = document.querySelectorAll(".type-card");
-// for (let i = 0; i < types.length; ++i) {
-//     types[i].style.transform = `translateX(${102*i}%)`;
-// }
 
 let cur_type = 0;
 
