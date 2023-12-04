@@ -108,7 +108,6 @@ main > h1 {
 
 
     width: calc(100% - var(--padding-left));
-    height: calc(100% - var(--padding-top));
     background-color: var(--filters-background-color);
     transition: right .5s ease;
 }

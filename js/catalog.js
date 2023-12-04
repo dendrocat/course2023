@@ -168,22 +168,33 @@ async function getData(json) {
 }
 
 function setMainSize() {
-
     let filter = document.querySelector("#filters");
     let filter_height = filter.clientHeight;
-    filter_height += Number(window.getComputedStyle(filter).paddingTop.slice(0, -2));
-
-    let h1_style = window.getComputedStyle(document.querySelector("h1"));
-    let h1_height = Number(h1_style.marginTop.slice(0, -2));
-    h1_height += Number(h1_style.height.slice(0, -2));
-    h1_height += Number(h1_style.marginBottom.slice(0, -2));
-
-
+    let filterPaddingTop = Number(window.getComputedStyle(filter).paddingTop.slice(0, -2));
+    filter_height += filterPaddingTop;
+    
+    let h1_height = 0;
+    if (filterPaddingTop == 0) {
+        let h1_style = window.getComputedStyle(document.querySelector("h1"));
+        h1_height = Number(h1_style.marginTop.slice(0, -2));
+        h1_height += Number(h1_style.height.slice(0, -2));
+        h1_height += Number(h1_style.marginBottom.slice(0, -2));
+    }
     func.setMainSize(filter_height + h1_height);
+
+    return filterPaddingTop;
 }
 
 let products = [];
 async function createCards() {
+    let error = document.querySelector("#error");
+    let filters = document.querySelector("#filters");
+    let products_cards = document.querySelector("#products");
+    error.style.display = "block";
+    filters.style.display = "none";
+    products_cards.style.display = "none";
+    setMainSize();
+
     let response = await fetch("./database/products/data.json");
     let json = await response.json();
     products = await getData(json);
@@ -205,8 +216,13 @@ async function createCards() {
     createChecks(products, "age");
     products.sort(func.compareMarks);
     setMinMaxPrices(products);
-    setMainSize();  
-    
+
+    error.style.display = "none";
+    filters.style.display = "block";
+    products_cards.style.display = "flex";
+
+    let paddingTop = setMainSize();  
+    filters.style.height = `calc(100% - ${paddingTop}px)`;
 }
 
 createCards();

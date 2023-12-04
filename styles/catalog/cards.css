@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: start;
+    align-content: start;
     row-gap: var(--gaps);
     column-gap: var(--gaps);
 
@@ -13,8 +15,6 @@
 }
 
 .card {
-    align-self: flex-start;
-    justify-self: flex-start;
 
     --color: #000;
     --decor: none;

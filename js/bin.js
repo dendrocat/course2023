@@ -104,7 +104,7 @@ function addCard(json, count) {
     let a_img = document.createElement("a");
     let path = json["imgs"][0];
     path = path.substring(path.indexOf("/", 3) + 1, path.lastIndexOf("/"));
-    a_img.href = `./product.html?path=${path}`
+    a_img.href = `product.html?path=${path}`
     a_img.className = "a-img";
     let img = document.createElement("img");
     img.src = json["imgs"][0];
@@ -115,7 +115,7 @@ function addCard(json, count) {
     let a_name = document.createElement("a");
     a_name.textContent = trancate(json["name"], 50);
     a_name.className = "name";
-    a_name.href = `./product.html?path=${path}`;
+    a_name.href = `product.html?path=${path}`;
     card.appendChild(a_name);
 
     let p_price = document.createElement("p");
@@ -153,6 +153,14 @@ function addCard(json, count) {
 
 let products = [];
 async function createCards() {
+    let error = document.querySelector("#error");
+    let empty_bin = document.querySelector("#empty-bin");
+    let container = document.querySelector("#container-res");
+    error.style.display = "block";
+    empty_bin.style.display = "none";
+    container.style.display = "none"
+    setMainSize();
+
     let bin = null;
     if (sessionStorage.bin) bin = JSON.parse(sessionStorage.bin);
     if (bin && bin.length > 0) {
@@ -162,20 +170,18 @@ async function createCards() {
             
             addCard(json, el["count"]);
         }
-        document.querySelector("#empty-bin").style.display = "none";
-        document.querySelector("#container-res").style.display = "grid";
+        container.style.display = "grid";
         updRes();
     }
     else {
-        document.querySelector("#empty-bin").style.display = "block";
-        document.querySelector("#container-res").style.display = "none";
-        
+        empty_bin.style.display = "block";
     }
+
+    error.style.display = "none";
+    setMainSize();
 }
 
 createCards();
-
-setMainSize();
 
 document.querySelector("#pay").onclick = function() {
     window.location.href = "./error.html";
