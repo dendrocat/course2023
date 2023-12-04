@@ -148,7 +148,7 @@ async function getData(json) {
     let new_products = [];
     for (let key in json) {
         for (let article in json[key]) {
-            let response = await fetch(`../../database/products/${json[key][article]}/data.json`);
+            let response = await fetch(`./database/products/${json[key][article]}/data.json`);
             let json_prod = await response.json();
             
             new_products.push(new Product(
@@ -184,7 +184,7 @@ function setMainSize() {
 
 let products = [];
 async function createCards() {
-    let response = await fetch("../../database/products/data.json");
+    let response = await fetch("./database/products/data.json");
     let json = await response.json();
     products = await getData(json);
     products.sort(func.compareMarks);
