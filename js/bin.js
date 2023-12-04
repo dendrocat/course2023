@@ -104,7 +104,7 @@ function addCard(json, count) {
     let a_img = document.createElement("a");
     let path = json["imgs"][0];
     path = path.substring(path.indexOf("/", 3) + 1, path.lastIndexOf("/"));
-    a_img.href = `product.html?path=${path}`
+    a_img.href = `./product.html?path=${path}`
     a_img.className = "a-img";
     let img = document.createElement("img");
     img.src = json["imgs"][0];
@@ -115,7 +115,7 @@ function addCard(json, count) {
     let a_name = document.createElement("a");
     a_name.textContent = trancate(json["name"], 50);
     a_name.className = "name";
-    a_name.href = `product.html?path=${path}`;
+    a_name.href = `./product.html?path=${path}`;
     card.appendChild(a_name);
 
     let p_price = document.createElement("p");
