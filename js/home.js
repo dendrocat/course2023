@@ -1,4 +1,4 @@
-import {setMainSize} from "./functions.js";
+import {setMainSize, addToBin, checkInBin} from "./functions.js";
 
 setMainSize();
 
@@ -31,4 +31,29 @@ document.querySelector("#left").onclick = function() {
 
 document.querySelector("#right").onclick = function() {
     moveScroll("right");
+}
+
+function getPath(button) {
+    let path = button.parentNode.querySelector(".img").href;
+    return path.substring(path.indexOf("=") + 1);
+}
+function setMark(button) {
+    button.childNodes[1].src = "./database/img/check_mark.png";
+    button.childNodes[1].style.width = "30px";
+}
+
+function addBin() {
+    let path = getPath(this);
+    if (!checkInBin(path)) {
+        addToBin(path);
+        setMark(this);
+    }
+}
+
+let buttons = document.querySelectorAll(".add");
+
+for (let button of buttons) {
+    button.onclick = addBin;
+    let path = getPath(button);
+    if (checkInBin(path)) setMark(button);
 }
