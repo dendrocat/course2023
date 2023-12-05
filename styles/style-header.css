@@ -181,10 +181,10 @@ header > img {
             rgba(76,178,254,1) 67%, 
             rgba(190,227,255,1) 94%);;
 
-        transition: left .5s ease;
-        -webkit-transition: left .5s ease;
-        -moz-transition: left .5s ease;
-        -o-transition: left .5s ease;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
     }
 
     .header-nav {
