@@ -183,7 +183,7 @@ function setMainSize() {
 
     func.setMainSize(filter_height + h1_height);
     if (windowWidth < 1001) return `calc(100% - ${filterPaddingTop}px)`;
-    else return `${filter_height - 2*filterPaddingTop}px`;
+    return `${filter_height - 2*filterPaddingTop}px`;
 }
 
 let products = [];
