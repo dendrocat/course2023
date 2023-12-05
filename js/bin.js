@@ -103,7 +103,7 @@ function addCard(json, count) {
 
     let a_img = document.createElement("a");
     let path = json["imgs"][0];
-    path = path.substring(path.indexOf("/", 3) + 1, path.lastIndexOf("/"));
+    path = path.substring(path.indexOf("products/") + "products/".length, path.lastIndexOf("/"));
     a_img.href = `product.html?path=${path}`
     a_img.className = "a-img";
     let img = document.createElement("img");
