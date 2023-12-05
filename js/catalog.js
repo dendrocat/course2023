@@ -168,6 +168,7 @@ async function getData(json) {
 }
 
 let windowWidth = document.body.clientWidth;
+let windowWidth = document.body.clientWidth;
 function setMainSize() {
     let filter = document.querySelector("#filters");
     let filter_height = filter.clientHeight;
@@ -175,15 +176,14 @@ function setMainSize() {
     filter_height += filterPaddingTop;
     
     let h1_height = 0;
-    if (filterPaddingTop != 0) {
-        let h1_style = window.getComputedStyle(document.querySelector("h1"));
-        h1_height = Number(h1_style.marginTop.slice(0, -2));
-        h1_height += Number(h1_style.height.slice(0, -2));
-        h1_height += Number(h1_style.marginBottom.slice(0, -2));
-    }
+    let h1_style = window.getComputedStyle(document.querySelector("h1"));
+    h1_height = Number(h1_style.marginTop.slice(0, -2));
+    h1_height += Number(h1_style.height.slice(0, -2));
+    h1_height += Number(h1_style.marginBottom.slice(0, -2));
+
     func.setMainSize(filter_height + h1_height);
     if (windowWidth < 1001) return `calc(100% - ${filterPaddingTop}px)`;
-    else return `${filter_height}px`;
+    else return `${filter_height - 2*filterPaddingTop}px`;
 }
 
 let products = [];
