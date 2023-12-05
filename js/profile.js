@@ -120,7 +120,6 @@ document.querySelector("#save").onmouseout = function() {
 
 function getProfile() {
     let profile = sessionStorage.profile;
-    console.log(profile);
     if (profile) {
         profile = JSON.parse(sessionStorage.profile);
         for (let id in profile) {
