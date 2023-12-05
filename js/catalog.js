@@ -168,7 +168,6 @@ async function getData(json) {
 }
 
 let windowWidth = document.body.clientWidth;
-let windowWidth = document.body.clientWidth;
 function setMainSize() {
     let filter = document.querySelector("#filters");
     let filter_height = filter.clientHeight;
