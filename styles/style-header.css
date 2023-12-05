@@ -120,14 +120,10 @@ header > img {
 
         background: whitesmoke;
 
-        transition: transform .5s ease,
-                    width .5s ease;
-        -webkit-transition: -webkit-transform .5s ease,
-                            width .5s ease;
-        -moz-transition: -moz-transform .5s ease,
-                         width .5s ease;
-        -o-transition: -o-transform .5s ease,
-                       width .5s ease;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
     }
     .lines1, .lines3 {
         transform-origin: 0 50%;
