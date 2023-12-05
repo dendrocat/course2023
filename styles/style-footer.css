@@ -81,9 +81,9 @@ footer {
     -o-transform: rotate(90deg);
 
     transition: transform 0.5s ease;
-    -webkit-transition: transform 0.5s ease;
-    -moz-transition: transform 0.5s ease;
-    -o-transition: transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
 }
 
 .footer-check {

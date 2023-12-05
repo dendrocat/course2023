@@ -54,11 +54,11 @@ main > h1 {
     transition: width .5s ease, 
                 transform .5s ease;
     -webkit-transition: width .5s ease, 
-                        transform .5s ease;
+                        -webkit-transform .5s ease;
     -moz-transition: width .5s ease, 
-                     transform .5s ease;
+                     -moz-transform .5s ease;
     -o-transition: width .5s ease, 
-                   transform .5s ease;
+                   -o-transform .5s ease;
 }
 .line1 {
     margin-bottom: var(--line-margin);

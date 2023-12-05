@@ -61,9 +61,9 @@ main {
     max-height: calc(100% - 2*var(--padding));
 
     transition: transform .5s ease;
-    -webkit-transition: transform .5s ease;
-    -moz-transition: transform .5s ease;
-    -o-transition: transform .5s ease;
+    -webkit-transition: -webkit-transform .5s ease;
+    -moz-transition: -moz-transform .5s ease;
+    -o-transition: -o-transform .5s ease;
 }
 
 #card > button {
@@ -131,9 +131,9 @@ main {
     width: 150%;
 
     transition: transform .5s ease;
-    -webkit-transition: transform .5s ease;
-    -moz-transition: transform .5s ease;
-    -o-transition: transform .5s ease;
+    -webkit-transition: -webkit-transform .5s ease;
+    -moz-transition: -moz-transform .5s ease;
+    -o-transition: -o-transform .5s ease;
 }
 
 #left::before {

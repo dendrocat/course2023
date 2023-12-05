@@ -48,13 +48,13 @@ main {
     transition: transform var(--duration) linear,
                 height var(--duration) linear,
                 margin-bottom var(--duration) linear;
-    -webkit-transition: transform var(--duration) linear,
+    -webkit-transition: -webkit-transform var(--duration) linear,
                         height var(--duration) linear,
                         margin-bottom var(--duration) linear;
-    -moz-transition: transform var(--duration) linear,
+    -moz-transition: -moz-transform var(--duration) linear,
                      height var(--duration) linear,
                      margin-bottom var(--duration) linear;
-    -o-transition: transform var(--duration) linear,
+    -o-transition: -o-transform var(--duration) linear,
                    height var(--duration) linear,
                    margin-bottom var(--duration) linear;
 }
@@ -155,9 +155,9 @@ main {
     justify-items: end;
 
     transition: transform .5s ease;
-    -webkit-transition: transform .5s ease;
-    -moz-transition: transform .5s ease;
-    -o-transition: transform .5s ease;
+    -webkit-transition: -webkit-transform .5s ease;
+    -moz-transition: -moz-transform .5s ease;
+    -o-transition: -o-transform .5s ease;
 }
 
 #res-contain {
