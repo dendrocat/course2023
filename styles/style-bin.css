@@ -14,8 +14,12 @@ main {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
+
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 #products {
@@ -44,6 +48,15 @@ main {
     transition: transform var(--duration) linear,
                 height var(--duration) linear,
                 margin-bottom var(--duration) linear;
+    -webkit-transition: transform var(--duration) linear,
+                        height var(--duration) linear,
+                        margin-bottom var(--duration) linear;
+    -moz-transition: transform var(--duration) linear,
+                     height var(--duration) linear,
+                     margin-bottom var(--duration) linear;
+    -o-transition: transform var(--duration) linear,
+                   height var(--duration) linear,
+                   margin-bottom var(--duration) linear;
 }
 
 
@@ -93,6 +106,9 @@ main {
     background-color: rgb(76, 191, 0);
 
     transition: background-color .2s ease;
+    -webkit-transition: background-color .2s ease;
+    -moz-transition: background-color .2s ease;
+    -o-transition: background-color .2s ease;
 }
 
 .buttons > button:hover {
@@ -139,6 +155,9 @@ main {
     justify-items: end;
 
     transition: transform .5s ease;
+    -webkit-transition: transform .5s ease;
+    -moz-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
 }
 
 #res-contain {

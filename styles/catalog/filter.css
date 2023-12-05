@@ -39,6 +39,9 @@ main > h1 {
     height: var(--polos-height);
 
     transition: width .5s ease;
+    -webkit-transition: width .5s ease;
+    -moz-transition: width .5s ease;
+    -o-transition: width .5s ease;
 }
 
 .line {
@@ -50,15 +53,35 @@ main > h1 {
     
     transition: width .5s ease, 
                 transform .5s ease;
+    -webkit-transition: width .5s ease, 
+                        transform .5s ease;
+    -moz-transition: width .5s ease, 
+                     transform .5s ease;
+    -o-transition: width .5s ease, 
+                   transform .5s ease;
 }
 .line1 {
     margin-bottom: var(--line-margin);
     transform-origin: 0 50%;
+    -webkit-transform-origin: 0 50%;
+    -moz-transform-origin: 0 50%;
+    -o-transform-origin:0 50%;
+
     transform: rotate(var(--rotate-deg));
+    -webkit-transform: rotate(var(--rotate-deg));
+    -moz-transform: rotate(var(--rotate-deg));
+    -o-transform: rotate(var(--rotate-deg));
 }
 .line2 {
     transform-origin: 0 50%;
+    -webkit-transform-origin: 0 50%;
+    -moz-transform-origin: 0 50%;
+    -o-transform-origin: 0 50%;
+
     transform: rotate(calc(0deg - var(--rotate-deg)));
+    -webkit-transform: rotate(calc(0deg - var(--rotate-deg)));
+    -moz-transform: rotate(calc(0deg - var(--rotate-deg)));
+    -o-transform: rotate(calc(0deg - var(--rotate-deg)));
 }
 
 
@@ -72,8 +95,6 @@ main > h1 {
     font-weight: 700;
     text-decoration: none solid rgb(68, 68, 68);
     font-style: normal;
-    font-variant: normal;
-    text-transform: none;
 }
 #podpis {
     display: inline;
@@ -109,7 +130,11 @@ main > h1 {
 
     width: calc(100% - var(--padding-left));
     background-color: var(--filters-background-color);
+    
     transition: right .5s ease;
+    -webkit-transition: right .5s ease;
+    -o-transition: right .5s ease;
+    -moz-transition: right .5s ease;
 }
 #filters > div {
     margin-bottom: 10px;
@@ -165,6 +190,9 @@ main > h1 {
 }
 .cheks {
     transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
 }
 .cheks:hover, .cheks:hover + label {
     cursor: pointer;

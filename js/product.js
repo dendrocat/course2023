@@ -30,7 +30,9 @@ function setDescription(desc) {
 
 function setCharact(charact) {
     for (let key in charact) {
-            document.querySelector(`#${key}`).textContent = charact[key];
+        let node = document.querySelector(`#${key}`);
+        if (key == "age") node.textContent = charact[key] + "+";
+        else node.textContent = charact[key];
     }
     
 }

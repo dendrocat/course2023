@@ -44,6 +44,12 @@
 
     transition: border-color .5s ease,
                 box-shadow .5s ease;
+    -webkit-transition: border-color .5s ease,
+                        box-shadow .5s ease;
+    -moz-transition: border-color .5s ease,
+                     box-shadow .5s ease;
+    -o-transition: border-color .5s ease,
+                   box-shadow .5s ease;
 }
 
 .card:hover {
