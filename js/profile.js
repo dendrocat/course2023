@@ -1,4 +1,3 @@
-import {setMainSize} from "./functions.js";
 
 
 function checkLogin(input) {
@@ -187,5 +186,4 @@ function getCountProducts() {
 document.querySelector("#count").textContent = getCountProducts();
 
 
-setMainSize();
 getProfile();
