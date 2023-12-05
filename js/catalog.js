@@ -317,6 +317,10 @@ function doFilter() {
         if (brand && type && price && sex && age) addCard(product);
     }
     document.querySelector("#button-close").checked = false;
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
