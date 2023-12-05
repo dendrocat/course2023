@@ -167,6 +167,7 @@ async function getData(json) {
     return new_products;
 }
 
+let windowWidth = document.body.clientWidth;
 function setMainSize() {
     let filter = document.querySelector("#filters");
     let filter_height = filter.clientHeight;
@@ -174,15 +175,15 @@ function setMainSize() {
     filter_height += filterPaddingTop;
     
     let h1_height = 0;
-    if (filterPaddingTop == 0) {
+    if (filterPaddingTop != 0) {
         let h1_style = window.getComputedStyle(document.querySelector("h1"));
         h1_height = Number(h1_style.marginTop.slice(0, -2));
         h1_height += Number(h1_style.height.slice(0, -2));
         h1_height += Number(h1_style.marginBottom.slice(0, -2));
     }
     func.setMainSize(filter_height + h1_height);
-
-    return filterPaddingTop;
+    if (windowWidth < 1001) return `calc(100% - ${filterPaddingTop}px)`;
+    else return `${filter_height}px`;
 }
 
 let products = [];
@@ -221,8 +222,7 @@ async function createCards() {
     filters.style.display = "block";
     products_cards.style.display = "flex";
 
-    let paddingTop = setMainSize();  
-    filters.style.height = `calc(100% - ${paddingTop}px)`;
+    filters.style.height = setMainSize();
 }
 
 createCards();
@@ -316,6 +316,7 @@ function doFilter() {
         let age = getAge(product["age"]) >= min_age;
         if (brand && type && price && sex && age) addCard(product);
     }
+
     document.querySelector("#button-close").checked = false;
     window.scrollTo({
         top: 0,
