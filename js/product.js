@@ -42,23 +42,24 @@ function getData() {
     fetch(`./database/products/${path}/data.json`).then(
         response => response.json()
     ).then(function(json) {
-        document.querySelector(`#name`).textContent = json["name"];
 
-        if (json["imgs"].length > 1) {
-            for (let i = 0; i < json["imgs"].length; ++i) {
-                let child = document.createElement("img");
-                child.src = json["imgs"][i];
-                child.className = "imgs";
-                child.style.transform = `translateX(${105*i}%)`;
-                child.style.display = 'block';
-                document.querySelector("#images").appendChild(child);
-            }
+        // добавление картинок товара
+        for (let i = 0; i < json["imgs"].length; ++i) {
+            let child = document.createElement("img");
+            child.src = json["imgs"][i];
+            child.className = "imgs";
+            child.style.transform = `translateX(${105*i}%)`;
+            child.style.display = 'block';
+            document.querySelector("#images").appendChild(child);
         }
-        else {
+        // если только одна картинка, то кнопки сдвига картинки убираются.
+        if (json["imgs"].length == 1) {
             document.querySelector("#right").style.display = 'none';
             document.querySelector("#left").style.display = 'none';
         }
 
+        // установка в поля соответствующих значений
+        document.querySelector(`#name`).textContent = json["name"];
         document.querySelector("#mark").textContent = json["mark"];
         document.querySelector("#brand-short").textContent = json["charact"]["brand"];
         document.querySelector("#price").textContent = json["price"];
