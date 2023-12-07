@@ -18,7 +18,7 @@
 
     --color: #000;
     --decor: none;
-    --img-height: clamp(130px, 25vw, 170px);
+    --img-height: clamp(135px, 25vw, 170px);
     --img-width: calc(var(--img-height) + 30px);
 
     font-family: sans-serif;
