@@ -35,8 +35,8 @@ main {
 
 
 
-    --button-width: 6vw;
-    --img-size: 60vw;
+    --button-width: 8vw;
+    --img-size: 75vw;
 
     height: var(--img-size);
     width: var(--img-size);
@@ -81,7 +81,7 @@ main {
     z-index: 10;
     opacity: 0;
     
-    --img-height: calc(var(--button-width)*5);
+    --img-height: calc(var(--button-width)*2);
     --img-width: var(--button-width);
 
     width: var(--img-height);
@@ -328,12 +328,19 @@ main {
     margin-left: 10px;
 }
 
+@media screen and (min-width: 768px) {
+    #card {
+        --img-size: 55vw;
+        --button-width: 6vw;
+    }
+}
+
 @media screen and (min-width: 1001px) {
     main {
         margin: 10px auto;
         width: 90%;
         display: grid;
-        grid-template-columns: 50vw auto;
+        grid-template-columns: min(50vw, 570px) auto;
         grid-template-rows: repeat(4,  auto);
     }
     #name {
@@ -343,7 +350,7 @@ main {
     #card {
         grid-row: 2/4;
         grid-column: 1/2;
-        --img-size: 35vw;
+        --img-size: min(45vw, 550px);
         --button-width: 4vw;
     }
 
@@ -355,7 +362,7 @@ main {
         height: 50px;
     
         display: grid;
-        grid-template-columns: 30% 65%;
+        grid-template-columns: 35% 60%;
         grid-template-rows: auto;
         align-items: center;
 
