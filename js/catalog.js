@@ -248,6 +248,13 @@ price_inputs[1].onchange = function() {
 }
 
 
+function closeFilter() {
+    document.querySelector("#button-close").checked = false;
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 
 document.querySelector("#clear").onclick = function() {
     let checkboxes = document.querySelectorAll(".cheks");
@@ -260,6 +267,8 @@ document.querySelector("#clear").onclick = function() {
     for (let i = 0; i < products.length; ++i) {
         addCard(products[i]);
     }
+
+    closeFilter();
 }
 
 function getAge(str) {
@@ -316,11 +325,7 @@ function doFilter() {
         if (brand && type && price && sex && age) addCard(product);
     }
 
-    document.querySelector("#button-close").checked = false;
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    closeFilter();
 }
 
 
