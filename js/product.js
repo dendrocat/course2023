@@ -37,7 +37,7 @@ function setCharact(charact) {
     
 }
 
-
+let translate = 115;
 function getData() {
     fetch(`./database/products/${path}/data.json`).then(
         response => response.json()
@@ -48,7 +48,7 @@ function getData() {
             let child = document.createElement("img");
             child.src = json["imgs"][i];
             child.className = "imgs";
-            child.style.transform = `translateX(${105*i}%)`;
+            child.style.transform = `translateX(${translate*i}%)`;
             child.style.display = 'block';
             document.querySelector("#images").appendChild(child);
         }
@@ -84,7 +84,7 @@ function translateX(direction) {
         --cur_img;
     }
     for (let i = 0; i < images.length; ++i) {
-        images[i].style.transform = `translateX(${-105*(cur_img-i)}%)`;
+        images[i].style.transform = `translateX(${-translate*(cur_img-i)}%)`;
     }
 
 }
