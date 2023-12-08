@@ -83,7 +83,7 @@ function getLabelText(old_str) {
     return old_str[0].toUpperCase() + old_str.slice(1);
 }
 
-function getText(old_str) {
+function getId(old_str) {
     return old_str.split(" ").join("");
 }
 
@@ -97,13 +97,13 @@ function createChecks(jsons, nameCheck) {
             checks.className = "checks";
             let input = document.createElement("input");
             input.type = "checkbox";
-            input.id = json[nameCheck];
+            input.id = getId(json[nameCheck]);
             input.className = `${nameCheck}s cheks`;
             if (checked && checked[1].toLowerCase() == getText(json[nameCheck]).toLowerCase()) {
                 input.checked = true;
             }
             let label = document.createElement("label");
-            label.htmlFor = json[nameCheck].split(" ").join("");
+            label.htmlFor = getId(json[nameCheck]);
             label.textContent = getLabelText(json[nameCheck]);
             label.className = `${nameCheck}s-labels`;
 
