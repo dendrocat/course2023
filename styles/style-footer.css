@@ -183,31 +183,7 @@ footer {
 
 @media screen and (min-width: 1001px) {
     .abouts {
-        margin: auto;
-        width: 80%;
-
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr;
-    }
-    .abouts-row::after, .inform1::before {
-        background-color: transparent;
-    }
-    .label-footer > img {
-        visibility: hidden;
-    }
-
-    .inform1, .inform2 {
-        height: calc(
-            calc(var(--items-height) + 
-            calc(var(--items-margin) * 2))
-            *4);
-    }
-    
-    .inform3 {
-        height: calc(
-            calc(var(--items-height) + 
-            calc(var(--items-margin) * 2))
-            *3);
     }
 }
