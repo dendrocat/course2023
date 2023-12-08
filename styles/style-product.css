@@ -60,10 +60,10 @@ main {
     max-width: calc(100% - 2*var(--padding));
     max-height: calc(100% - 2*var(--padding));
 
-    transition: transform .5s ease;
-    -webkit-transition: -webkit-transform .5s ease;
-    -moz-transition: -moz-transform .5s ease;
-    -o-transition: -o-transform .5s ease;
+    transition: transform .7s ease-in-out;
+    -webkit-transition: -webkit-transform .7s ease-in-out;
+    -moz-transition: -moz-transform .7s ease-in-out;
+    -o-transition: -o-transform .7s ease-in-out;
 }
 
 #card > button {
