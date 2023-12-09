@@ -187,35 +187,43 @@ function setMainSize() {
 
 let products = [];
 async function createCards() {
+
     let error = document.querySelector("#error");
     let filters = document.querySelector("#filters");
     let products_cards = document.querySelector("#products");
     error.style.display = "block";
     filters.style.display = "none";
     products_cards.style.display = "none";
+
+    // загрузка данных
     setMainSize();
 
     let response = await fetch("./database/products/data.json");
     let json = await response.json();
     products = await getData(json);
-    products.sort(func.compareMarks);
-    products.forEach(el => {
-        if (checked) {
-            if (getId(el[checked[0]]).toLowerCase() == checked[1].toLowerCase()) 
-                addCard(el);
-        }
-        else addCard(el);
-    });
+
+    // создание input[type="checkbox"] для реализации фильтрации
     products.sort(func.compareBrands);
-    createChecks(products, "brand");
+    createChecks(products, "brand"); 
     products.sort(func.compareTypes);
     createChecks(products, "type");
     products.sort(func.compareSexs);
     createChecks(products, "sex");
     products.sort(func.compareAges);
     createChecks(products, "age");
-    products.sort(func.compareMarks);
+    // установка минимальной и максимальной цены для фильтрации
     setMinMaxPrices(products);
+
+    products.sort(func.compareMarks);
+    console.log(products);
+    products.forEach(el => {
+        if (checked) {
+            if (getText(el[checked[0]]).toLowerCase() == checked[1].toLowerCase()) 
+                addCard(el);
+        }
+        else addCard(el); // функция создания карточки товара по json объекту
+    });
+
 
     error.style.display = "none";
     filters.style.display = "block";
