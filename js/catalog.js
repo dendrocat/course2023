@@ -218,7 +218,7 @@ async function createCards() {
     console.log(products);
     products.forEach(el => {
         if (checked) {
-            if (getText(el[checked[0]]).toLowerCase() == checked[1].toLowerCase()) 
+            if (getId(el[checked[0]]).toLowerCase() == checked[1].toLowerCase()) 
                 addCard(el);
         }
         else addCard(el); // функция создания карточки товара по json объекту
