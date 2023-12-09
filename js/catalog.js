@@ -99,7 +99,7 @@ function createChecks(jsons, nameCheck) {
             input.type = "checkbox";
             input.id = getId(json[nameCheck]);
             input.className = `${nameCheck}s cheks`;
-            if (checked && checked[1].toLowerCase() == getText(json[nameCheck]).toLowerCase()) {
+            if (checked && checked[1].toLowerCase() == getId(json[nameCheck]).toLowerCase()) {
                 input.checked = true;
             }
             let label = document.createElement("label");
@@ -201,7 +201,7 @@ async function createCards() {
     products.sort(func.compareMarks);
     products.forEach(el => {
         if (checked) {
-            if (getText(el[checked[0]]).toLowerCase() == checked[1].toLowerCase()) 
+            if (getId(el[checked[0]]).toLowerCase() == checked[1].toLowerCase()) 
                 addCard(el);
         }
         else addCard(el);
