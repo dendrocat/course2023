@@ -215,7 +215,7 @@ async function createCards() {
     setMinMaxPrices(products);
 
     products.sort(func.compareMarks);
-    console.log(products);
+    //console.log(products);
     products.forEach(el => {
         if (checked) {
             if (getId(el[checked[0]]).toLowerCase() == checked[1].toLowerCase()) 
