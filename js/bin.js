@@ -23,13 +23,11 @@ function updRes() {
     let count = document.querySelectorAll(".count");
     let res = 0;
     for (let i = 0; i < prices.length; ++i) {
-        if (Number(count[i].value) > 0) res += Number(getText(prices[i].textContent)) * Number(count[i].value);
+        let val = Number(count[i].value);
+        if (val > 0) res += Number(getText(prices[i].textContent)) * Number(count[i].value);
     }
     if (res != 0) {
         document.querySelector("#res").textContent = splitThrees(String(res));
-    }
-    else {
-
     }
 }
 
@@ -136,6 +134,8 @@ function addCard(json, count) {
     input.type = "number";
     input.className = "count";
     input.value = count;
+    input.disabled = "true";
+    input.style.color = "#000";
     buttons.appendChild(input);
 
     let button_plus = document.createElement("button");
