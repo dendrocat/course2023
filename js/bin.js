@@ -79,7 +79,7 @@ function changeCountMinus() {
     let input = this.parentNode.querySelector(".count");
     changeCount(input, "minus");
     let arr = JSON.parse(sessionStorage.bin);
-    if (input.value == 0) {
+    if (input.value <= 0) {
         let cur_card = this.parentNode.parentNode;
         translateElem(cur_card);
         window.setTimeout(function(div, deleted, button, input) {
