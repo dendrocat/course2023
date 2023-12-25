@@ -23,7 +23,7 @@ function updRes() {
     let count = document.querySelectorAll(".count");
     let res = 0;
     for (let i = 0; i < prices.length; ++i) {
-        res += Number(getText(prices[i].textContent)) * Number(count[i].value);
+        if (Number(getText(prices[i].textContent)) > 0) res += Number(getText(prices[i].textContent)) * Number(count[i].value);
     }
     if (res != 0) {
         document.querySelector("#res").textContent = splitThrees(String(res));
