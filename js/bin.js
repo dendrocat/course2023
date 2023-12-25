@@ -61,7 +61,7 @@ function translateElem(elem) {
 function updBin(path, count) {
     let arr = JSON.parse(sessionStorage.bin);
     let i = arr.findIndex(el => el["path"] == path);
-    if (count == 0) arr.splice(i, 1);
+    if (count <= 0) arr.splice(i, 1);
     else arr[i]["count"] = Number(count);
     sessionStorage.bin = JSON.stringify(arr);
     
