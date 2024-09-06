@@ -53,13 +53,6 @@ export function bugFilter() {
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
 export function bugInput(input) {
-    let str = ""
-    let len = input.value.length
-
-    // console.log(len)
-    
-    for (; len > 0; --len)
-        str[len - 1] += characters.charAt(random(0, characters.length))
-
-    input.value = str
+    if (input.value.length == 0) return;
+    input.value = input.value.slice(0, -1) + characters[random(0, characters.length - 1)]
 }
