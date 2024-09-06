@@ -1,4 +1,4 @@
-import { bugImage } from "./bug.js";
+import { bugImage, checkInBin } from "./bug.js";
 import * as func from "./functions.js";
 
 let path = new URL(document.URL).searchParams.get("path");
@@ -108,14 +108,15 @@ if (func.checkInBin(path)) {
 
 
 document.querySelector("#add").onclick = function() {
-    if (!func.checkInBin(path)) {
-        this.removeChild(document.querySelector("#img-add"));
-        document.querySelector("#span-add").textContent = "Перейти в корзину";
-        func.addToBin(path);
-    }
-    else {
-        window.location = "bin.html";
-    }
+    checkInBin();
+    // if (!func.checkInBin(path)) {
+    //     this.removeChild(document.querySelector("#img-add"));
+    //     document.querySelector("#span-add").textContent = "Перейти в корзину";
+    //     func.addToBin(path);
+    // }
+    // else {
+    //     window.location = "bin.html";
+    // }
 }
 
 document.querySelector("#all").onclick = function() {

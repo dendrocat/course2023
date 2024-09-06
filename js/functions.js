@@ -1,5 +1,3 @@
-import * as bug from "./bug.js"
-
 export function compareMarks(a, b) {
     if (a["mark"] < b["mark"]) return 1;
     else if (a["mark"] > b["mark"]) return -1;
@@ -46,7 +44,6 @@ export function checkInBin(path) {
 }
 
 export function addToBin(path) {
-    if (bug.checkInBin()) return; 
     if (path == null) return;
     if (sessionStorage.bin == undefined) {
         sessionStorage.setItem("bin", JSON.stringify([{

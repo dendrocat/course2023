@@ -1,16 +1,17 @@
-let probCheck = 20;
+let probCheck = 100;
 let probRotate = 10;
 let probSum = 80;
 let probImg = 5;
 let probFilt = 10;
 
+let rangeRandomSum = 5000
 
 function random(l, r) {
     return Math.round(Math.random() * (r - l) + l)
 }
 
 function doBug(prob) {
-    console.log(random(0, 100))
+    // console.log(random(0, 100))
     return random(0, 100) <= prob;
 }
 
@@ -34,7 +35,7 @@ export function bugSum(sum) {
     if (!doBug(probSum)) return sum;
     //console.log("bugSUm");
 
-    return sum + random(-10000, 100000)
+    return sum + random(-rangeRandomSum, rangeRandomSum)
 }
 
 export function bugImage(img) {
@@ -55,10 +56,10 @@ export function bugInput(input) {
     let str = ""
     let len = input.value.length
 
-    console.log(len)
+    // console.log(len)
     
     for (; len > 0; --len)
-        str += characters.charAt(random(0, characters.length))
+        str[len - 1] += characters.charAt(random(0, characters.length))
 
     input.value = str
 }
