@@ -1,3 +1,5 @@
+import * as bug from "./bin.js"
+
 export function compareMarks(a, b) {
     if (a["mark"] < b["mark"]) return 1;
     else if (a["mark"] > b["mark"]) return -1;
@@ -37,6 +39,7 @@ export function trancate(str, length) {
 
 
 export function checkInBin(path) {
+    if (bug.closeWindow()) return 
     if (path == null) return false;
     if (sessionStorage.bin == undefined) return false;
     let arr = JSON.parse(sessionStorage.bin);

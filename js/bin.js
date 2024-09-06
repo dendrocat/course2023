@@ -151,7 +151,6 @@ function addCard(json, count) {
 }
 
 
-let products = [];
 async function createCards() {
     let error = document.querySelector("#error");
     let empty_bin = document.querySelector("#empty-bin");
