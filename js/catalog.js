@@ -1,3 +1,4 @@
+import { bugFilter, rotateImage } from "./bug.js";
 import * as func from "./functions.js";
 
 
@@ -38,6 +39,7 @@ function addCard(json) {
     let img = document.createElement("img");
     img.className = "image";
     img.src = json["img"];
+    rotateImage(img);
     a_img.appendChild(img);
     card.appendChild(a_img);
 
@@ -317,21 +319,27 @@ function getFiltersInform() {
     return [brands, types, sexs, min_age, prices];
 }
 
-function doFilter() {
+function predicate(product) { 
+    if (bugFilter()) return true;
+
     let brands = [], types = [], sexs = [], min_age, prices = [];
     [brands, types, sexs, min_age, prices] = getFiltersInform();
+    let brand = brands.includes(product["brand"]);
+    let type = types.includes(product["type"]);
+    let price = (product["price"] >= prices[0] 
+                && product["price"] <= prices[1]);
+    let sex = sexs.includes(product["sex"]);
+    let age = getAge(product["age"]) >= min_age;
+
+    return brand && type && price && sex && age
+}
+
+function doFilter() {
 
     let container = document.querySelector("#products");
     container.innerHTML = '';
-    for (let product of products) {
-        let brand = brands.includes(product["brand"]);
-        let type = types.includes(product["type"]);
-        let price = (product["price"] >= prices[0] 
-                    && product["price"] <= prices[1]);
-        let sex = sexs.includes(product["sex"]);
-        let age = getAge(product["age"]) >= min_age;
-        if (brand && type && price && sex && age) addCard(product);
-    }
+    for (let product of products)
+        if (predicate(product)) addCard(product)
 
     closeFilter();
 }

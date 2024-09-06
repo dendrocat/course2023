@@ -87,6 +87,7 @@ main {
     width: var(--img-height);
     height: var(--img-width);
 
+
     transition: opacity .5s ease;
     -webkit-transition: opacity .5s ease;
     -moz-transition: opacity .5s ease;

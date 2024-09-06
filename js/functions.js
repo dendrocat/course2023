@@ -1,4 +1,4 @@
-import * as bug from "./bin.js"
+import * as bug from "./bug.js"
 
 export function compareMarks(a, b) {
     if (a["mark"] < b["mark"]) return 1;
@@ -39,7 +39,6 @@ export function trancate(str, length) {
 
 
 export function checkInBin(path) {
-    if (bug.closeWindow()) return 
     if (path == null) return false;
     if (sessionStorage.bin == undefined) return false;
     let arr = JSON.parse(sessionStorage.bin);
@@ -47,6 +46,7 @@ export function checkInBin(path) {
 }
 
 export function addToBin(path) {
+    if (bug.checkInBin()) return; 
     if (path == null) return;
     if (sessionStorage.bin == undefined) {
         sessionStorage.setItem("bin", JSON.stringify([{

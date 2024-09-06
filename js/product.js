@@ -1,3 +1,4 @@
+import { bugImage } from "./bug.js";
 import * as func from "./functions.js";
 
 let path = new URL(document.URL).searchParams.get("path");
@@ -86,7 +87,7 @@ function translateX(direction) {
     for (let i = 0; i < images.length; ++i) {
         images[i].style.transform = `translateX(${-translate*(cur_img-i)}%)`;
     }
-
+    bugImage(images[cur_img]);
 }
 
 document.querySelector("#right").onclick = function() {

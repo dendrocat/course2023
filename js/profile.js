@@ -1,3 +1,4 @@
+import { bugInput } from './bug.js';
 import {setMainSize} from './functions.js';
 
 function checkLogin(input) {
@@ -105,6 +106,7 @@ function activeButton() {
 for (let input of document.querySelectorAll(".input")) {
     input.onchange = activeButton;
     input.disabled = true;
+    input.addEventListener("input", () => { bugInput(input) });
 }
 
 document.querySelector("#save").style.color = "whitesmoke";

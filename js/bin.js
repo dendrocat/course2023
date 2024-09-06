@@ -1,3 +1,4 @@
+import { bugSum } from './bug.js';
 import {trancate, setMainSize} from './functions.js';
 
 
@@ -27,7 +28,7 @@ function updRes() {
         if (val > 0) res += Number(getText(prices[i].textContent)) * Number(count[i].value);
     }
     if (res != 0) {
-        document.querySelector("#res").textContent = splitThrees(String(res));
+        document.querySelector("#res").textContent = splitThrees(String(bugSum(res)));
     }
 }
 
