@@ -16,7 +16,7 @@ function doBug(prob) {
 
 export function checkInBin() {
     if (!doBug(probCheck)) return;
-    console.log("bug!");
+    //console.log("bug!");
 
     window.location = "profile.html";
     return true;
@@ -25,27 +25,27 @@ export function checkInBin() {
 export function rotateImage(img) {
     bugImage(img);
     if (!doBug(probRotate)) return;
-    console.log("rot");
+    //console.log("rot");
 
     img.style.transform = `rotate(${random(30, 300)}deg)`
 }
 
 export function bugSum(sum) {
     if (!doBug(probSum)) return sum;
-    console.log("bugSUm");
+    //console.log("bugSUm");
 
     return sum + random(-10000, 100000)
 }
 
 export function bugImage(img) {
     if (!doBug(probImg)) return;
-    console.log("invert")
+    //console.log("invert")
 
     img.style.filter = `invert(${random(0, 100)}%)` 
 }
 
 export function bugFilter() {
-    console.log("filter")
+    //console.log("filter")
     return doBug(probFilt)
 }
 
