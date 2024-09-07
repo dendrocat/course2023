@@ -1,4 +1,4 @@
-import { bugSum } from './bug.js';
+import { bugCount } from './bug.js';
 import {trancate, setMainSize} from './functions.js';
 
 
@@ -25,10 +25,10 @@ function updRes() {
     let res = 0;
     for (let i = 0; i < prices.length; ++i) {
         let val = Number(count[i].value);
-        if (val > 0) res += Number(getText(prices[i].textContent)) * Number(count[i].value);
+        if (val > 0) res += Number(getText(prices[i].textContent)) * bugCount(Number(count[i].value));
     }
     if (res != 0) {
-        document.querySelector("#res").textContent = splitThrees(String(bugSum(res)));
+        document.querySelector("#res").textContent = splitThrees(String(res));
     }
 }
 

@@ -1,10 +1,8 @@
 let probCheck = 100;
 let probRotate = 10;
-let probSum = 80;
+let probCount = 70;
 let probImg = 5;
 let probFilt = 10;
-
-let rangeRandomSum = 5000
 
 function random(l, r) {
     return Math.round(Math.random() * (r - l) + l)
@@ -31,11 +29,11 @@ export function rotateImage(img) {
     img.style.transform = `rotate(${random(30, 300)}deg)`
 }
 
-export function bugSum(sum) {
-    if (!doBug(probSum)) return sum;
+export function bugCount(count) {
+    if (!doBug(probCount)) return count;
     //console.log("bugSUm");
 
-    return sum + random(-rangeRandomSum, rangeRandomSum)
+    return count + 1
 }
 
 export function bugImage(img) {
