@@ -43,8 +43,17 @@ export function bugFilter() {
 }
 
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_+-=?[]()';
+const ignore = '@.';
+
+function ignoreChar(char) {
+    for (let el of ignore)
+        if (char == el) return true;
+
+    return false;
+}
 
 export function bugInput(input) {
     if (input.value.length == 0) return;
+    if (ignoreChar(input.value[input.value.length - 1])) return;
     input.value = input.value.slice(0, -1) + characters[random(0, characters.length - 1)]
 }
